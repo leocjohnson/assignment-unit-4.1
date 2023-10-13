@@ -5,8 +5,9 @@ console.log('***** Function Practice *****');
 // to test it and display the result
 
 
-console.log('--- Question 1 (example) ---')
 // 1. Function to return 'Hello World!'
+console.log('--- Question 1 (example) ---')
+
 function hello(){
   return 'Hello World!';
 }
@@ -14,11 +15,13 @@ function hello(){
 console.log('Test - should say "Hello World!"', hello());
 
 
-console.log('--- Question 2 ---')
+
 // 2. Function to return an personalized hello, using the `name` argument.
 //    for example 'Hello, Jo!', or 'Hello, Stacy!'
+console.log('--- Question 2 ---')
+
 function helloName(name) {
-  console.log('--- in helloName ---')
+  console.log(`in helloName with value ${name}:`);
   if(name){
     return `Hello, ${name}!`;
   }
@@ -28,29 +31,43 @@ function helloName(name) {
 }
 // Remember to call the function to test
 console.log('Test helloName:', helloName('Leo Johnson'));
+console.log('Test helloName:', helloName());
 
 
-console.log('--- Question 3 ---')
+
 // 3. Function to add two numbers together & return the result
+console.log('--- Question 3 ---')
+
 function addNumbers(firstNumber, secondNumber){
+  console.log(`in addNumbers with values ${firstNumber} and ${secondNumber}`);
   // return firstNumber + secondNumber;
   return firstNumber + secondNumber;
 }
-console.log('Test addNumbers:', addNumbers(43897, -222));
+console.log('Test addNumbers:', addNumbers(3, 3));
+console.log('Test addNumbers:', addNumbers(3, -6));
+console.log('Test addNumbers:', addNumbers(3, 0));
 
 
-console.log('--- Question 4 ---')
+
 // 4. Function to multiply three numbers & return the result
+console.log('--- Question 4 ---')
+
 function multiplyThree(firstNumber, secondNumber, thirdNumber){
+  console.log(`in multiplyThree with values ${firstNumber}, ${secondNumber}, and ${thirdNumber}.`);
   return firstNumber * secondNumber * thirdNumber;
 }
-console.log('Test multiplyThree:', multiplyThree(12, 32, -2929));
+console.log('Test multiplyThree:', multiplyThree(3, 3, 3));
+console.log('Test multiplyThree:', multiplyThree(3, 3, -3));
+console.log('Test multiplyThree:', multiplyThree(3, 3, 0));
 
 
-console.log('--- Question 5 ---')
+
 // 5. Function that will return true if a number is positive, 
 //    or greater than zero, and false otherwise
+console.log('--- Question 5 ---')
+
 function isPositive(number){
+  console.log(`in isPositive with value ${number}`);
   if (number > 0) {
     return true;
   }
@@ -65,10 +82,13 @@ console.log('Test isPositive (negative):', isPositive(-999));
 console.log('Test isPositive (zero):', isPositive(0));
 
 
-console.log('--- Question 6 ---')
+
 // 6. Function to return the _last_ item in an array. If the 
 //    array is empty, return `undefined`.
+console.log('--- Question 6 ---')
+
 function getLast(array){
+  console.log(`in getLast with array ${array}`);
   if(array){
     return array[array.length - 1]
   }
@@ -79,23 +99,29 @@ function getLast(array){
 console.log('Test getLast:', getLast([1,2,3,4,5]));
 
 
-console.log('--- Question 7 ---')
+
 // 7. Function to find a value in an array. Return true if the 
 //    value is found and false otherwise. Use a loop;
 //    DO NOT use Array.includes, Array.indexOf, or Array.find 
+console.log('--- Question 7 ---')
+
 function find(value, array){
-  console.log("--- in function 'find' ---")
-  console.log(`Searching for value ${value} in array:`, array);
+  console.log(`in find with value ${value} and array ${array}`);
   for(let i=0; i<array.length-1; i++){
-    if(array[i] = value){
-      return true;
+    console.log(`examining array value ${array[i]} at index ${i}.`)
+    console.log(`does array value ${array[i]} match search query ${value}?`)
+    if(array[i] === value){
+      console.log(true);
     }
     else{
-      return false;
+      console.log(false);
     }
+    
   }
 }
-console.log(find(1,[3,2,1]));
+console.log(find(9,[3,9,27]));
+// console.log(find(729,[3,9,27]));
+
 
 
 // ----------------------
@@ -103,7 +129,7 @@ console.log(find(1,[3,2,1]));
 // ----------------------
 
 
-console.log('--- Question 7 ---')
+console.log('--- Question 8 ---')
 // 8. Function to check if a letter is the first letter in a 
 //    string. Return true if it is, and false otherwise
 function isFirstLetter(letter, string) {
