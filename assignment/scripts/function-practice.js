@@ -109,7 +109,7 @@ function find(value, array){
   console.log('in find with value:', value, 'and array:', array);
   for(let i of array){
     console.log('i =', i);
-    if (array[i] === value){
+    if (i === value){
       return true;
     }
   }
