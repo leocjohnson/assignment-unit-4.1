@@ -107,20 +107,15 @@ console.log('--- Question 7 ---');
 
 function find(value, array){
   console.log('in find with value:', value, 'and array:', array);
-  for(let i=0; i<array.length-1; i++){
-    console.log(`examining array value ${array[i]} at index ${i}.`)
-    console.log(`does array value ${array[i]} match search query ${value}?`)
-    if(array[i] === value){
-      console.log(true);
+  for(let i of array){
+    console.log('i =', i);
+    if (array[i] === value){
+      return true;
     }
-    else{
-      console.log(false);
-    }
-    
   }
+  return false;
 }
-console.log(find(9,[3,9,27]));
-// console.log(find(729,[3,9,27]));
+console.log(find(1,[-2,5,999]));
 
 
 
